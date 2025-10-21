@@ -7,7 +7,7 @@ A full-stack authentication system with Flask backend and Flutter frontend. Feat
 
 | Welcome Screen | Login Screen | Profile Details | Update Profile |
 |----------------|--------------|-----------------|----------------|
-| ![Welcome](images/welcome.png) | ![Login](images/login.png) | ![Profile](images/profile.png) | ![Update](images/update.png) |
+| ![Welcome](images/welcome.png) | ![Login](images/login.png) | ![Profile](images/update.png) | ![Update](images/profile.png) |
 
 ## Tech Stack
 
@@ -39,7 +39,7 @@ humblepos/
 ├── flutter_frontend/     # Flutter app
 │   └── lib/
 │       ├── main.dart
-│       ├── screens.dart
+│       ├── screens #all ui screens
 │       └── api_service.dart
 └── images/              # Screenshots
 ├── welcome.png
