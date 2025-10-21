@@ -27,9 +27,23 @@ class Config:
     TESTING = os.getenv('TESTING', 'False').lower() in ('true', '1', 'yes')
     
     # ==================== Database Settings ====================
+    # Support both individual parameters and full DATABASE_URL
     DATABASE_URL = os.getenv('DATABASE_URL')
+    
+    # If DATABASE_URL is not provided, construct it from individual parameters
     if not DATABASE_URL:
-        raise ValueError("DATABASE_URL must be set in .env file")
+        DB_HOST = os.getenv('DB_HOST', 'localhost')
+        DB_PORT = os.getenv('DB_PORT', '3306')
+        DB_USER = os.getenv('DB_USER', 'root')
+        DB_PASSWORD = os.getenv('DB_PASSWORD')
+        DB_NAME = os.getenv('DB_NAME', 'auth_db')
+        
+        if not DB_PASSWORD:
+            raise ValueError(
+                "Either DATABASE_URL or DB_PASSWORD must be set in .env file"
+            )
+        
+        DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
     
     SQLALCHEMY_DATABASE_URI = DATABASE_URL
     SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -174,7 +174,8 @@ def register_general_routes(app):
         """Health check endpoint for monitoring."""
         try:
             # Test database connection
-            db.session.execute('SELECT 1')
+            from sqlalchemy import text
+            db.session.execute(text('SELECT 1'))
             db_status = 'connected'
         except Exception as e:
             app.logger.error(f'Database health check failed: {str(e)}')
