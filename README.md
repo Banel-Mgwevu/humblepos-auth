@@ -4,9 +4,9 @@ A full-stack authentication system with Flask backend and Flutter frontend. Feat
 
 ## Screenshots
 
-| Welcome Screen | Login Screen | Update Profile |
+| Welcome Screen | Login Screen |  Profile Details | Update Profile
 |---------------|--------------|----------------|
-| ![Welcome](images/welcome.png) | ![Login](images/login.png) | ![Update](images/update.png) |
+| ![Welcome](images/welcome.png) | ![Login](images/login.png) | ![Update](images/update.png) | ![Update](images/profile.png) 
 
 ## Tech Stack
 

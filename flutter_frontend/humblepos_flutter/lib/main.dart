@@ -1,6 +1,7 @@
 // main.dart
 import 'package:flutter/material.dart';
-import 'screens.dart';
+import 'package:humblepos_flutter/screen/welcome_screen.dart';
+// import 'screens.dart';
 
 void main() {
   runApp(const HumblePOSApp());
